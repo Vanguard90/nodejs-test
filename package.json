@@ -1,0 +1,31 @@
+{
+  "name": "nodejs-angular-test",
+  "version": "0.0.1",
+  "description": "This is a project to test NodeJS with Angular.",
+  "main": "index.js",
+  "scripts": {
+    "nodemon": "nodemon ./server.js localhost:8000",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Vanguard90/nodejs-test.git"
+  },
+  "keywords": [
+    "nodejs",
+    "angular",
+    "test"
+  ],
+  "author": "Enes Kirimi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Vanguard90/nodejs-test/issues"
+  },
+  "homepage": "https://github.com/Vanguard90/nodejs-test#readme",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "eslint": "^5.0.1",
+    "express": "^4.16.3",
+    "nodemon": "^1.17.5"
+  }
+}
