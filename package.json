@@ -24,6 +24,7 @@
   },
   "homepage": "https://github.com/Vanguard90/nodejs-test#readme",
   "dependencies": {
+    "angular-cli": "^1.0.0-beta.28.3",
     "body-parser": "^1.18.3",
     "eslint": "^5.0.1",
     "express": "^4.16.3",
