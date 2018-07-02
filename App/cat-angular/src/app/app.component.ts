@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CatsService } from './cats-service/cats-service';
+import { ICat, IAllCats } from './cats-service/cats-interface';
 
 @Component({
   selector: 'app-root',
@@ -7,24 +8,25 @@ import { CatsService } from './cats-service/cats-service';
   styleUrls: ['./app.component.sass']
 })
 export class AppComponent implements OnInit {
-  title = 'app';
+  title = 'NodeJS + Angular test app';
+  allCats: IAllCats;
 
-  constructor(private catsService: CatsService) {}
+  constructor(private catsService: CatsService) { }
 
   ngOnInit() {
 
   }
 
-  getCatsFunction(arg: string): void {
+  getCats(): void {
 
-    switch (arg) {
-      case 'all':
-        this.catsService.getAllCats().subscribe(
-          allCats => console.log(allCats)
-        );
-        break;
-      default:
-        break;
-    }
+    this.catsService.getAllCats().subscribe(
+      allCatsResponse => {
+       this.allCats = allCatsResponse;
+       console.log(this.allCats);
+     });
+  }
+
+  getSingleCat(): void {
+    // Fill it up.
   }
 }

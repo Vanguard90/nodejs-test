@@ -1,10 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
-
-export interface Cat {
-  name: string;
-}
+import { ICat, IAllCats } from './cats-interface';
 
 @Injectable()
 export class CatsService {
@@ -13,19 +10,19 @@ export class CatsService {
     private http: HttpClient
   ) {}
 
-  getAllCats(): Observable<Cat[]> {
-    return this.http.get<Cat[]>('http://localhost:8000/api/cats');
+  getAllCats(): Observable<IAllCats> {
+    return this.http.get<IAllCats>('http://localhost:8000/api/cats');
   }
 
-  getCat(name: string): Observable<Cat> {
-    return this.http.get<Cat>('http://localhost:8000/api/cats/' + name);
+  getCat(name: string): Observable<ICat> {
+    return this.http.get<ICat>('http://localhost:8000/api/cats/' + name);
   }
 
-  insertCat(cat: Cat): Observable<Cat> {
-    return this.http.post<Cat>('http://localhost:8000/api/cats/', cat);
+  insertCat(cat: ICat): Observable<ICat> {
+    return this.http.post<ICat>('http://localhost:8000/api/cats/', cat);
   }
 
-  updateCat(cat: Cat): Observable<void> {
+  updateCat(cat: ICat): Observable<void> {
     return this.http.put<void>('http://localhost:8000/api/cats/' + cat.name, cat);
   }
 

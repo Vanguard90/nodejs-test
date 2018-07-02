@@ -26,11 +26,11 @@ app.use(bodyParser.json());
 
 
 app.listen(8000, () => { // Listen on port 8000
-    console.log('Server started!');
+    console.log('NodeJS server started!');
   });
 
   app.get('/', function(req, res){
-    res.send('Homepage!');
+    res.send('Server is running!');
   });
 
   //When at below route, do something.
@@ -39,7 +39,7 @@ app.listen(8000, () => { // Listen on port 8000
   app.route('/api/cats').get((req, res) => {
 
     res.send({
-      cats: [{ name: 'Lilly' }, { name: 'Lucy' }]
+      cats: [{ name: 'Nova' }, { name: 'Pasa' }, { name: 'Tekir' }, { name: 'Sarikiz' }, { name: 'Duman' }]
     });
   });
 
