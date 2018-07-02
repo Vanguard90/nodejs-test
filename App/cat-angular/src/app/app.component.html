@@ -18,7 +18,7 @@
 </div>
 <div *ngIf="allCats" style="width: 50%; float: right;">
   <ul>
-    <li *ngFor="let cat of allCats.cats">
+    <li *ngFor="let cat of allCats">
       <pre>{{ cat | json }}</pre>
     </li>
   </ul>

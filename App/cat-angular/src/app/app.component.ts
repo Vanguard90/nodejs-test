@@ -9,24 +9,25 @@ import { ICat, IAllCats } from './cats-service/cats-interface';
 })
 export class AppComponent implements OnInit {
   title = 'NodeJS + Angular test app';
-  allCats: IAllCats;
+  allCats: ICat[];
 
   constructor(private catsService: CatsService) { }
 
   ngOnInit() {
-
+    this.getCats();
   }
 
   getCats(): void {
 
     this.catsService.getAllCats().subscribe(
       allCatsResponse => {
-       this.allCats = allCatsResponse;
+       this.allCats = allCatsResponse.cats;
        console.log(this.allCats);
      });
   }
 
   getSingleCat(): void {
-    // Fill it up.
+    const singleCat = this.allCats[Math.floor(Math.random() * this.allCats.length)];
+    console.log(singleCat);
   }
 }
